@@ -1,4 +1,4 @@
-from jumperstart_course_demos._04journal import journal
+from jumperstart_course_demos._04_journal import journal
 
 
 def main():

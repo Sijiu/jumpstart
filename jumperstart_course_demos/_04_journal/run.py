@@ -3,7 +3,7 @@
 """
 @author: mxh @time:2019/3/29 16:52
 """
-from jumperstart_course_demos._04journal import main
+from jumperstart_course_demos._04_journal import main
 
 print("1. About to import main")
 
