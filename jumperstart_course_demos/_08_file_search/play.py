@@ -1,6 +1,7 @@
 # 5! = 120:
 #
 # 5 * 4 * 3 * 2 * 1
+import time
 
 
 def factorial(n):
@@ -31,12 +32,13 @@ def fibonacci(limit):
 
     return nums
 
-
-print('via lists')
-for n in fibonacci(100):
-    print(n, end=', ')
-
-print()
+start = time.time()
+print('via lists ', start)
+for n in fibonacci(100**10000):
+    pass
+    # print(n, end=', ')
+end = time.time()
+print("used", start, end, "===", end - start)  # 0.34702610969543457
 
 
 def fibonacci_co():
@@ -47,14 +49,14 @@ def fibonacci_co():
         current, next = next, next + current
         yield current
 
-
-print('with yield')
+yield_time = time.time()
+print('with yield ', yield_time)
 for n in fibonacci_co():
-    if n > 1000:
+    if n > 100**10000:
         break
 
-    print(n, end=', ')
-
+    # print(n, end=', ')
+print("end all=", time.time() - yield_time) # 42.92902970314026
 # 关于format格式问题
 """
 In[52]: "{0:*<20}".format(3)
